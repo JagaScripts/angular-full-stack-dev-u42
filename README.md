@@ -41,3 +41,6 @@ Utiliza para ello la funcionalidad de la clase 'HttpClient'. Se recomienda integ
 En esta entrega es necesario implementar modelos de datos, obsevables, dependency injection, services, httpinterceptors así como los módulos y componentes que consideres necesarios para cumplir con los requerimientos de la entrega.
 
 **Adjunta la URL del repo** utilizado para resolver la tarea (añade node_modules al gitignore). **Recuerda que tienes fecha límite** de entrega. 
+
+# 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional</a>.
