@@ -21,6 +21,7 @@ export class CharacterComponent implements OnInit {
 
    this.characters = this.characterServicio.getCharacters();
 
+
   }
 
 
