@@ -9,6 +9,10 @@ import { CharacterComponent } from './character/character.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DetalleComponent } from './detalle/detalle.component';
+import { CreateCharacterComponent } from './components/create-character/create-character.component';
+import { ReadCharacterComponent } from './components/read-character/read-character.component';
+import { UpdateCharacterComponent } from './components/update-character/update-character.component';
+import { DeleteCharacterComponent } from './components/delete-character/delete-character.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { DetalleComponent } from './detalle/detalle.component';
     HomeComponent,
     AboutComponent,
     CharacterComponent,
-    DetalleComponent
+    DetalleComponent,
+    CreateCharacterComponent,
+    ReadCharacterComponent,
+    UpdateCharacterComponent,
+    DeleteCharacterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-{
+var faker = require('faker');
+
+var database = {
   "characters": [
     {
       "id": 1,
@@ -50,4 +52,6 @@
       "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
     }
   ]
-}
+};
+
+console.log(JSON.stringify(database));

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CharactersService } from '../characters.service';
+import { Component, OnInit } from '@angular/core';
+import { CharactersService } from '../services/characters.service';
 
 @Component({
   selector: 'app-detalle',

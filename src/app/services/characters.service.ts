@@ -43,5 +43,4 @@ export class CharactersService {
   setCharacter(id: number){
     this.character = this.getCharacterId(id);
   }
-
 }
