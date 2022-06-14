@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Character } from 'src/app/models/character.model';
 import { CharactersService } from 'src/app/services/characters.service';
 
+const TOTAL_CHARACTERS: number = 826;
 @Component({
   selector: 'app-create-character',
   templateUrl: './create-character.component.html',
@@ -20,44 +22,64 @@ export class CreateCharacterComponent implements OnInit {
     image: "",
   };
 
-  isCharacterAdded = false;
+  isSharacterFind = false;
 
-  constructor(private characterServicio: CharactersService) { }
+  constructor(private characterServicio: CharactersService,
+    private router: Router) { }
 
   ngOnInit(): void {
   }
 
   // Add New
   addCharacter(): void {
-    const data = {
-      id: this.character.id,
-      name: this.character.name,
-      status: this.character.status,
-      species: this.character.species,
-      gender: this.character.gender,
-      origin: this.character.origin,
-      location: this.character.location,
-      image: this.character.image,
-    };
-    if (!data.name) {
-      alert('Please add name!');
+
+    if ((this.character.id < 1 || this.character.id > TOTAL_CHARACTERS)) {
+
+
+
+      alert('Porfavor introduce una id entre 1 y 826!');
+      this.router.navigate(['/crear']);
+
       return;
+
+    } else {
+
+      this.characterServicio.getItemOnline(this.character.id)
+        .subscribe(
+          {
+            next: (response: Character) => {
+              this.character = response;
+              this.isSharacterFind = true;
+            },
+            error: (error: Error) => {
+              console.log(error.message);
+            }
+          });
+
+
+
     }
 
-    this.characterServicio.create(data)
+
+
+    if (this.isSharacterFind) {
+      this.characterServicio.create(this.character)
       .subscribe(
-        response => {
-          console.log(response);
-          this.isCharacterAdded = true;
-        },
-        error => {
-          console.log(error);
+        {
+          next: (response: Character) => {
+            alert(`Character created!`);
+          },
+          error: (error: Error) => {
+            console.log(error.message);
+          }
         });
+    }
+
+    this.newCharacter();
   }
 
   // Reset on adding new
   newCharacter(): void {
-    this.isCharacterAdded = false;
     this.character = {
       id: 0,
       name: "",
@@ -68,6 +90,7 @@ export class CreateCharacterComponent implements OnInit {
       location: "",
       image: "",
     };
+    this.isSharacterFind = false;
   }
 
 

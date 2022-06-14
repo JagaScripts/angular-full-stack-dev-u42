@@ -79,16 +79,6 @@
         "url": "https://rickandmortyapi.com/api/location/6"
       },
       "image": "https://rickandmortyapi.com/api/character/avatar/29.jpeg"
-    },
-    {
-      "id": 218,
-      "name": "sdf",
-      "status": "asdf",
-      "species": "asdf",
-      "gender": "asdf",
-      "origin": "asdf",
-      "location": "sdf",
-      "image": "asdf"
     }
   ]
 }

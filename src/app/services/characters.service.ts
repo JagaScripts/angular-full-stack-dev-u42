@@ -56,8 +56,8 @@ export class CharactersService {
   }
 
   // Search By Name
-  filterByOrigin(origin: string): Observable<Character> {
-    return this.httpClient.get<Character>(`${this.apiUrl}?title_like=${origin}`).pipe(
+  filterByName(name: string): Observable<Character> {
+    return this.httpClient.get<Character>(`${this.apiUrl}?name=${name}`).pipe(
       catchError(this.handleError)
     );
   }
@@ -83,6 +83,7 @@ export class CharactersService {
 
   getItemOnline(id: number): Observable<Character> {
     return this.httpClient.get<Character>(`${this.apiUrlOnline}/${id}`).pipe(
+
       catchError(this.handleError)
     );
   }

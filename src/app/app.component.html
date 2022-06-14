@@ -1,48 +1,50 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+<nav class="navbar navbar-expand navbar-dark bg-dark ps-5">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/home">Rick and Morty</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end text-white bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page"  routerLink="/home">Home</a>
+  <a href="/home" class="navbar-brand">Home</a>
+  <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item" routerLink="books" routerLinkActive="active">
+          <a href="/books" class="nav-link">List</a>
+      </li>
+      <li class="nav-item" routerLink="add" routerLinkActive="active">
+          <a href="/add" class="nav-link">Add </a>
+      </li>
+      <li class="nav-item" routerLink="books" routerLinkActive="active">
+          <a href="/characters" class="nav-link">Characters</a>
+      </li>
+      <li class="nav-item" routerLink="books" *ngIf="showAdminBoard">
+          <a href="/admin"  class="nav-link">Admin Board</a>
+      </li>
+      <li class="nav-item" routerLink="books" *ngIf="showModeratorBoard" >
+          <a href="/mod" class="nav-link">Moderator Board</a>
+      </li>
+      <li class="nav-item" routerLink="books"  *ngIf="isLoggedIn">
+          <a href="/user" class="nav-link">User</a>
+      </li>
+
+      </ul>
+      <form class="d-flex" role="search">
+          <li class="navbar-nav me-auto mb-2 mb-lg-0"  >
+              <a href="/register" routerLink="register" class="nav-link">Sign Up</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/character">Character</a>
+          <li class="navbar-nav me-auto mb-2 mb-lg-0"  >
+              <a href="/login" routerLink="login" class="nav-link">Login</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" routerLink="/about">About</a>
+          <li class="navbar-nav me-auto mb-2 mb-lg-0" >
+              <a href="#" routerLink="profile" class="nav-link">{{username}}</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link" routerLink="/add">Add</a>
+          <li class="navbar-nav me-auto mb-2 mb-lg-0" >
+              <a href="#" (click)="logout()" class="nav-link">Logout</a>
           </li>
-        </ul>
-        <form class="d-flex mt-3 mt-lg-0" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-      </div>
-    </div>
+
   </div>
+
+</div>
 </nav>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet></router-outlet>
+<div class="container mt-5">
+  <router-outlet></router-outlet>
+</div>

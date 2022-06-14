@@ -24,7 +24,6 @@ export class DetalleComponent implements OnInit {
 
   getCharacter(id: string | null): void {
     let nId = id;
-    console.log(nId + " Numero " + id +  " Cadena ")
     this.characterServicio.getItem(Number(nId))
       .subscribe(
         (response: Character) => {

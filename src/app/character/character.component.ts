@@ -44,34 +44,31 @@ export class CharacterComponent implements OnInit {
 
   generateDbRamdom() {
 
-
-
-
-
     for (let index = 0; index < 5; index++) {
       this.characterServicio.getItemOnline(this.getRandom(1, TOTAL_CHARACTERS))
-      .subscribe(response => {
-        let auxCharacter: Character = {
-        id: response.id,
-        name: response.name,
-        status: response.status,
-        species: response.species,
-        gender: response.gender,
-        origin: response.origin,
-        location: response.location,
-        image :response.image};
-        this.characterServicio.create(auxCharacter).subscribe(response => {
-          console.log(response);
-        },
-          error => {
-            console.log(error);
-          });
-      }, error => {
-        console.log(error);
-      });
+        .subscribe(response => {
+          let auxCharacter: Character = {
+            id: response.id,
+            name: response.name,
+            status: response.status,
+            species: response.species,
+            gender: response.gender,
+            origin: response.origin,
+            location: response.location,
+            image: response.image
+          };
+          this.characterServicio.create(auxCharacter).subscribe(response => {
+            console.log(response);
+          },
+            error => {
+              console.log(error);
+            });
+        }, error => {
+          console.log(error);
+        });
 
 
-  }
+    }
 
   }
 

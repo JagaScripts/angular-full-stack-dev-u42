@@ -13,6 +13,12 @@ import { CreateCharacterComponent } from './components/create-character/create-c
 import { ReadCharacterComponent } from './components/read-character/read-character.component';
 import { UpdateCharacterComponent } from './components/update-character/update-character.component';
 import { DeleteCharacterComponent } from './components/delete-character/delete-character.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardModeradorComponent } from './board-moderador/board-moderador.component';
+import { BoardUserComponent } from './board-user/board-user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,13 @@ import { DeleteCharacterComponent } from './components/delete-character/delete-c
     CreateCharacterComponent,
     ReadCharacterComponent,
     UpdateCharacterComponent,
-    DeleteCharacterComponent
+    DeleteCharacterComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeradorComponent,
+    BoardUserComponent
   ],
   imports: [
     BrowserModule,
