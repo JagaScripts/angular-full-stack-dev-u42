@@ -1,6 +1,6 @@
 # RickYMortyFrontendApp
 
-Este repositorio corresponde al ejercicio realizado en la formación de Java Full Stack Developer, concretamente a la unidad 38 UD38 - T38 - Rick & Morty Frontend App Services v-2 Jose A González Alcántara
+Este repositorio corresponde al ejercicio realizado en la formación de Java Full Stack Developer, concretamente a la unidad 42 UD42 - T42 - Rick & Morty Frontend App Services v-2 Jose A González Alcántara
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
 
