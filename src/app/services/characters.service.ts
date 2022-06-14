@@ -1,46 +1,90 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { error } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
+import { catchError, Observable, throwError } from 'rxjs';
+import { Character } from '../models/character.model';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharactersService {
 
-  characters: any = null;
-  character: any = null;
-  msgError: any = null;
+  apiUrl: string = 'http://localhost:3000/characters';
+  apiUrlOnline: string = "https://rickandmortyapi.com/api/character/";
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
+  characters: Character[] = [];
+  character!: Character;
+  msgError?: Error;
 
-  constructor(private http: HttpClient) {
-      this.http.get("https://rickandmortyapi.com/api/character/1,2,3,4,5")
-        .subscribe( result => {
-          this.characters = result;
-        })
+  constructor(private httpClient: HttpClient) { }
 
+
+   // Show lists of item
+   list(): Observable<Character[]> {
+    return this.httpClient.get<Character[]>(this.apiUrl).pipe(
+      catchError(this.handleError)
+    );
   }
 
-  getCharacters(){
-
-   return this.characters;
-
+  // Create new item
+  getItem(id: number): Observable<Character> {
+    return this.httpClient.get<Character>(`${this.apiUrl}/${id}`).pipe(
+      catchError(this.handleError)
+    );
   }
 
-  getCharacterId(id: number){
+  create(data: Character): Observable<Character> {
+    return this.httpClient.post<Character>(this.apiUrl, data).pipe(
+      catchError(this.handleError)
+    );
+  }
 
-    for (const character of this.characters) {
-      if (character.id === id) {
+  // Edit/ Update
+  update(id: number, data: Character): Observable<Character> {
+    return this.httpClient.put<Character>(`${this.apiUrl}/${id}`, data).pipe(
+      catchError(this.handleError)
+    );
+  }
 
-        return character;
+  // Delete
+  delete(id?: number): Observable<Character> {
+    return this.httpClient.delete<Character>(`${this.apiUrl}/${id}`).pipe(
+      catchError(this.handleError)
+    );
+  }
 
-      }
+  // Search By Name
+  filterByOrigin(origin: string): Observable<Character> {
+    return this.httpClient.get<Character>(`${this.apiUrl}?title_like=${origin}`).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  // Handle API errors
+  handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      console.error('An error occurred:', error.error.message);
+    } else {
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
     }
+    return throwError(
+      'Something bad happened; please try again later.');
+  };
 
+
+
+
+
+
+
+  getItemOnline(id: number): Observable<Character> {
+    return this.httpClient.get<Character>(`${this.apiUrlOnline}/${id}`).pipe(
+      catchError(this.handleError)
+    );
   }
 
-  getCharacter(){
-    return this.character;
-  }
-
-  setCharacter(id: number){
-    this.character = this.getCharacterId(id);
-  }
 }

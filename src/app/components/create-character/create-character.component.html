@@ -1,1 +1,92 @@
-<p>create-character works!</p>
+<div style="width: 500px; margin: auto">
+  <div class="submit-form">
+    <div *ngIf="!isCharacterAdded">
+      <div class="form-group">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="character.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status</label>
+        <input
+          class="form-control"
+          id="status"
+          required
+          [(ngModel)]="character.status"
+          name="status"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="species">Species</label>
+        <input
+          class="form-control"
+          id="species"
+          required
+          [(ngModel)]="character.species"
+          name="species"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <input
+          class="form-control"
+          id="gender"
+          required
+          [(ngModel)]="character.gender"
+          name="gender"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="origin">Origin</label>
+        <input
+          class="form-control"
+          id="origin"
+          required
+          [(ngModel)]="character.origin"
+          name="origin"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input
+          class="form-control"
+          id="location"
+          required
+          [(ngModel)]="character.location"
+          name="location"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input
+          class="form-control"
+          id="image"
+          required
+          [(ngModel)]="character.image"
+          name="image"
+        />
+      </div>
+
+      <button (click)="addCharacter()" class="btn btn-success">Crear</button>
+    </div>
+
+    <div *ngIf="isCharacterAdded">
+      <h3>Nuevo caracter añadido!</h3>
+      <button class="btn btn-success" (click)="newCharacter()">
+        + Añadir mas
+      </button>
+    </div>
+  </div>
+</div>

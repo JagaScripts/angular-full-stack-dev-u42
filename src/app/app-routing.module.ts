@@ -12,11 +12,12 @@ const routes: Routes = [
   { path:"character", component: CharacterComponent },
   { path:"about", component: AboutComponent },
   { path:"home", component: HomeComponent },
-  { path:"detalle", component: DetalleComponent },
+  { path:"detalle/:id", component: DetalleComponent },
   { path:"crear", component: CreateCharacterComponent },
   { path:"leer", component: ReadCharacterComponent },
   { path:"actualizar", component: UpdateCharacterComponent },
-  { path:"borrar", component: ReadCharacterComponent }
+  { path:"borrar", component: ReadCharacterComponent },
+  { path:"add", component: CreateCharacterComponent }
 
 ];
 

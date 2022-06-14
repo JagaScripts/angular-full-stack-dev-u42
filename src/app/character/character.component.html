@@ -4,7 +4,7 @@
     <div class="card-body mb-3">
       <h5 class="card-title ms-2 mt-3 mb-3 ms-3">{{char.name}}</h5>
       <div class="text-center">
-        <a href="#" class="btn btn-warning w-75" (click)="characterService.setCharacter(char.id)" routerLink="/detalle" >See more</a>
+        <a href="#" class="btn btn-warning w-75" routerLink="/detalle/{{char.id}}" >See more</a>
       </div>
     </div>
   </div>
