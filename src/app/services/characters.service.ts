@@ -1,5 +1,4 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { error } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Character } from '../models/character.model';

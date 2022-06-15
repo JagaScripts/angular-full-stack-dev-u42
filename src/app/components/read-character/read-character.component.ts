@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-read-character',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./read-character.component.css']
 })
 export class ReadCharacterComponent implements OnInit {
+
+  @Input() characters: any = null;
 
   constructor() { }
 

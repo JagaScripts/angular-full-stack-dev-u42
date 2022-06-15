@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -19,6 +18,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeradorComponent } from './board-moderador/board-moderador.component';
 import { BoardUserComponent } from './board-user/board-user.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { BoardUserComponent } from './board-user/board-user.component';
     ProfileComponent,
     BoardAdminComponent,
     BoardModeradorComponent,
-    BoardUserComponent
+    BoardUserComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

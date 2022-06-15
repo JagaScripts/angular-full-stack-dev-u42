@@ -1,30 +1,26 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { User } from '../models/user.model';
+import { Observable, Subject } from 'rxjs';
 
-const API_URL = "https://jmm-spring-api-h2-angular.herokuapp.com/users/";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private httpClient: HttpClient) { }
+  private user: any;
+  private user$: Subject<any>;
 
-  getPublicContent(): Observable<any> {
-    return this.httpClient.get(API_URL + 'all', { responseType: 'text'});
+  constructor() {
+    this.user$ = new Subject();
   }
 
-  getUserBoard(): Observable<any> {
-    return this.httpClient.get(API_URL + 'user', { responseType: 'text'});
+  addUser(rol: any){
+    this.user = rol;
+    this.user$.next(this.user);
   }
 
-  getModeratorBoard(): Observable<any> {
-    return this.httpClient.get(API_URL + 'mod', { responseType: 'text'});
+  getUser$(): Observable<any> {
+    return this.user$.asObservable();
   }
 
-  getAdminBoard(): Observable<any> {
-    return this.httpClient.get(API_URL + 'admin', { responseType: 'text'});
-  }
 }
