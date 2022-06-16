@@ -1,29 +1,46 @@
-# RickYMortyFrontendApp
+# TA05 – Rick & Morty Frontend App (Solución)
 
-Este repositorio corresponde al ejercicio realizado en la formación de Java Full Stack Developer, concretamente a la unidad 42 UD42 - T42 - Rick & Morty Frontend App Services v-2 Jose A González Alcántara
+Sobre la aplicación anterior de Rick&Morty has de crear un evolutivo en el que incluyas la funcionalidad de login, registro de nuevos usuarios, logout, así como un sistema de acceso a determinados componentes por roles. Únicamente el usuario con rol de admin puede añadir nuevos personajes.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+### /home
 
-## Development server
+ ![image](https://user-images.githubusercontent.com/16636086/159194013-1273323f-289b-4918-8d9e-c2297fda14cd.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+### /characters
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ ![image](https://user-images.githubusercontent.com/16636086/159194016-1744943d-3e66-4fcb-a912-be631eed3d4a.png)
 
-## Build
+### /characters/4
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ ![image](https://user-images.githubusercontent.com/16636086/159194025-161d64e9-c946-461a-9987-8cdbf6beb773.png)
 
-## Running unit tests
+### /add
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ ![image](https://user-images.githubusercontent.com/16636086/159194031-d38ab491-0573-4da8-99b6-3f0bae61fc59.png)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+El acceso a la aplicación se ha de gestionar mediante el token generado por la siguiente API: 
+```sh
+https://jmm-spring-api-h2-angular.herokuapp.com/
+```
 
-## Further help
+End-points:
+> 
+> -	POST /login
+> -	POST /users/
+> -	GET  /users/
+> -	GET  /users/username
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Users:
+> 
+> - { "username": "GeeksHubs_2022", "password": "password"}'
+> - { "username": "CT2022", "password": "password"}'
+
+Utiliza para ello la funcionalidad de la clase 'HttpClient'. Se recomienda integrar Bootstrap en la interfaz visual. 
+En esta entrega es necesario implementar modelos de datos, obsevables, dependency injection, services, httpinterceptors así como los módulos y componentes que consideres necesarios para cumplir con los requerimientos de la entrega.
+
+**Adjunta la URL del repo** utilizado para resolver la tarea (añade node_modules al gitignore). **Recuerda que tienes fecha límite** de entrega. 
+
+# 
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />Este obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">licencia de Creative Commons Reconocimiento-NoComercial-SinObraDerivada 4.0 Internacional</a>.

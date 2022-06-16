@@ -1,33 +1,39 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import {HttpClientModule} from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { CharacterComponent } from './character/character.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { DetalleComponent } from './detalle/detalle.component';
-import { LoginComponent } from './login/login.component';
-import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { NavbarComponent } from './home/navbar/navbar.component';
+import { CharacterListComponent } from './character/character-list/character-list.component';
+import { CharacterComponent } from './character/character/character.component';
+import { CharacterDetailComponent } from './character/character-detail/character-detail.component';
 import { HomeComponent } from './home/home/home.component';
+import { NavbarComponent } from './home/navbar/navbar.component';
+import { CharacterAddComponent } from './character/character-add/character-add.component';
+
+import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent,
+    CharacterListComponent,
     CharacterComponent,
-    DetalleComponent,
+    CharacterDetailComponent,
+    HomeComponent,
+    NavbarComponent,
+    CharacterAddComponent,
     LoginComponent,
-    RegisterComponent,
-    NavbarComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     FormsModule
   ],
   providers: [authInterceptorProviders],
