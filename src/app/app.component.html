@@ -1,51 +1,14 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark ps-5">
-  <div class="container-fluid">
-    <a href="/home" class="navbar-brand">Home</a>
-    <div class="collapse navbar-collapse me-5" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item" routerLink="add" routerLinkActive="active">
-          <a href="/add" class="nav-link">Add </a>
-        </li>
-        <li class="nav-item" routerLink="books" routerLinkActive="active">
-          <a href="/characters" class="nav-link">Characters</a>
-        </li>
-        <li class="nav-item" routerLink="books" *ngIf="showAdminBoard">
-          <a href="/admin" class="nav-link">Admin Board</a>
-        </li>
-        <li class="nav-item" routerLink="books" *ngIf="showModeratorBoard">
-          <a href="/mod" class="nav-link">Moderator Board</a>
-        </li>
-        <li class="nav-item" routerLink="books" *ngIf="isLoggedIn">
-          <a href="/user" class="nav-link">User</a>
-        </li>
-        <li class="navbar-nav me-auto mb-2 mb-lg-0">
-          <a href="/register" routerLink="register" class="nav-link">Sign Up</a>
-        </li>
-        <li class="navbar-nav me-auto mb-2 mb-lg-0">
-          <a href="/login" routerLink="login" class="nav-link">Login</a>
-        </li>
-        <li class="navbar-nav me-auto mb-2 mb-lg-0">
-          <a href="#" routerLink="profile" class="nav-link">{{ username }}</a>
-        </li>
-        <li class="navbar-nav me-auto mb-2 mb-lg-0">
-          <a href="#" (click)="logout()" class="nav-link">Logout</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<app-navbar></app-navbar>
+<div class="container" id="main" >
+  <h1>{{title}}</h1>
 
-<div class="container mt-5">
-  <a href="#" class="nav-link">{{nueva}}</a>
-  <a href="#" class="nav-link">{{nueva2}}</a>
   <router-outlet></router-outlet>
+
 </div>

@@ -79,7 +79,11 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+<<<<<<< HEAD
             "browserTarget": "rick-y-morty-frontend-app:build"
+=======
+            "browserTarget": "TA03:build"
+>>>>>>> 69e5f981df9cdcc59585ecb176fd438b01d261a9
           }
         },
         "test": {
@@ -98,9 +102,45 @@
             ],
             "scripts": []
           }
+<<<<<<< HEAD
+=======
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "TA03:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "TA03:serve:production"
+            }
+          }
+>>>>>>> 69e5f981df9cdcc59585ecb176fd438b01d261a9
         }
       }
     }
   },
+<<<<<<< HEAD
   "defaultProject": "rick-y-morty-frontend-app"
 }
+=======
+  "defaultProject": "TA03",
+  "cli": {
+    "analytics": "6a553804-d143-4837-ab76-e12e8237e712"
+  }
+}
+>>>>>>> 69e5f981df9cdcc59585ecb176fd438b01d261a9
