@@ -23,20 +23,6 @@ export class CharacterDetailComponent implements OnInit {
 
   }
 
-  // updateCharacter(): void {
-  //   this.message = '';
-
-  //   this.characterService.update(this.currentBook.id, this.currentBook)
-  //     .subscribe(
-  //       response => {
-  //         console.log(response);
-  //         this.message = response.message ? response.message : 'This Character was updated successfully!';
-  //       },
-  //       error => {
-  //         console.log(error);
-  //       });
-  // }
-
   deleteCharacter(): void {
     this.characterService.delete(this.id)
       .subscribe(

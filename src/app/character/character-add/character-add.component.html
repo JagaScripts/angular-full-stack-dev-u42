@@ -11,12 +11,12 @@
           <input type="text" class="form-control" id="name" placeholder="Rick..." required [(ngModel)]="character.name" name="name">
         </div>
 
-          <button (click)="saveCharacter()" class="btn btn-success">Submit</button>
+          <button (click)="saveCharacter()" class="btn btn-warning">Submit</button>
       </div>
 
       <div *ngIf="submitted">
         <h4>Character was submitted successfully!</h4>
-        <button class="btn btn-success" (click)="newCharacter()">Add</button>
+        <button class="btn btn-warning" (click)="newCharacter()">Add</button>
     </div>
 
   </div>

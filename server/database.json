@@ -32,7 +32,7 @@
     {
       "id": 4,
       "name": "Beth Smith",
-      "status": "Dead",
+      "status": "Alive",
       "species": "Human",
       "gender": "Female",
       "origin": "Earth (Replacement Dimension)",
@@ -48,6 +48,26 @@
       "origin": "Earth (Replacement Dimension)",
       "location": "Earth",
       "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg"
+    },
+    {
+      "id": 78,
+      "name": "",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "origin": "Earth",
+      "location": "Earth",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+    },
+    {
+      "id": 96,
+      "name": "",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "origin": "Earth",
+      "location": "Earth",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
     }
   ]
 }

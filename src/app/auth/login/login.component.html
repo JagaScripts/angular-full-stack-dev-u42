@@ -14,12 +14,12 @@
           <input type="text" class="form-control" id="password" placeholder="Rick..." required [(ngModel)]="login.password" name="password">
         </div>
 
-          <button (click)="logUser()" class="btn btn-success">Submit</button>
+          <button (click)="logUser()" class="btn btn-warning">Submit</button>
       </div>
 
       <div *ngIf="submitted">
         <h4>Bienvenido {{login.username}}</h4>
-        <button class="btn btn-success" routerLink="/home">Continuar</button>
+        <button class="btn btn-warning" routerLink="/home">Continuar</button>
     </div>
   </div>
 </div>
